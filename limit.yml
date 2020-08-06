@@ -1,0 +1,8 @@
+#ansible-playbook limit.yml  --limit client --list-hosts
+# ansible-playbook limit.yml  --limit client -vvvv
+---
+ - hosts: all
+   tasks:
+   - name: installing git in clinet server
+     yum: name=git state=installed
+

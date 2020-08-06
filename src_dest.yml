@@ -1,0 +1,12 @@
+---
+ - hosts: client
+   tasks:
+   - name: copy files
+     copy:
+       src: "{{item.src}}"
+       dest: "{{item.dest}}"
+     with_items:
+     - {
+       src: "/etc/hosts",
+       dest: "/etc/httpd/conf/httpd.conf"
+     }

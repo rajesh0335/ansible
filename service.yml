@@ -1,0 +1,8 @@
+---
+ - hosts: client
+   tasks:
+     - name: installing vsftpd service 
+       yum: name=vsftpd state=present
+     - name: enabling the service at boot level
+       service: name=vsftpd state=started enabled=yes
+
