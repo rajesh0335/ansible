@@ -1,0 +1,16 @@
+---
+ - hosts: all
+   tasks: 
+   - name: coping files
+     copy: 
+       src: "{{ item.src }}"
+       dest: "{{ item.dest }}"
+     with_items:
+     - {
+       src: "/etc/ansible",
+       dest: "/home"
+     }
+     - {
+       src: "/etc/ansible/hosts",
+       dest: "/home"
+     }
