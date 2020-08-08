@@ -1,0 +1,10 @@
+---
+ - hosts: master
+   tasks: 
+   - name: checking when command
+     shell: echo "bye"
+     register: foo
+#   - debug: msg="the varaiable is {{ foo }} "
+   - name: samba installation
+     yum: name=samba state=installed
+     when: " 'hai' in foo.stdout" 
